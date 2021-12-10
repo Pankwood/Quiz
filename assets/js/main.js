@@ -20,6 +20,10 @@
 		xxsmall: [null, '360px']
 	});
 
+	//Set user
+	if ((localStorage.getItem("user") == null) || (localStorage.getItem("user") == ""))
+		localStorage.setItem('user', location.search);
+
 	// Play initial animations on page load.
 	$window.on('load', function () {
 		window.setTimeout(function () {
