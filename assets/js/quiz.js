@@ -156,17 +156,17 @@
     if (localStorage.getItem("user") === '?user=Naia') {
         myQuestions = [
             {
-                question: "TESTSe a Juliana ganhasse na loteria, qual seria a primeira compra dela?",
+                question: "Se o Danilo ganhasse na loteria, qual seria a primeira compra dele?",
                 answers: {
-                    a: "Roupas",
+                    a: "Barco",
                     b: "Viagem",
-                    c: "Mansão",
-                    d: "Iate"
+                    c: "Tim Hortons",
+                    d: "Ilha"
                 },
                 correctAnswer: "b"
             },
             {
-                question: "O que a Juliana acha de dividir comida?",
+                question: "O que o Danilo acha de dividir comida?",
                 answers: {
                     a: "Não se importa",
                     b: "Nem pensar!",
@@ -176,29 +176,29 @@
                 correctAnswer: "d"
             },
             {
-                question: "Se a Juliana encontrasse uma lâmpada mágica, qual a primeira coisa que ela pediria?",
+                question: "Se o Danilo encontrasse uma lâmpada mágica, qual a primeira coisa que ela pediria?",
                 answers: {
                     a: "Dinheiro sem fim",
                     b: "Saúde",
                     c: "Super Poderes",
                     d: "Sabedoria"
                 },
-                correctAnswer: "a"
+                correctAnswer: "d"
             },
             {
-                question: "O que mais irrita ela?",
+                question: "O que mais irrita ele?",
                 answers: {
                     a: "Barulho alto",
-                    b: "Ficar com fome",
+                    b: "Desmarcar compromisso",
                     c: "Indecisão na hora de escolher algo para comer",
                     d: "Mexer no celular enquanto conversa"
                 },
                 correctAnswer: "c"
             },
             {
-                question: "Qual seria o título da lápide dela?",
+                question: "Qual seria o título da lápide dele?",
                 answers: {
-                    a: "Uma Jornada de Milagres",
+                    a: "Uma jornada de milagres",
                     b: "Ter nascido me estragou a saúde",
                     c: "Nunca matou quem não precisasse ser assassinado",
                     d: "Cai fora. Estou dormido"
