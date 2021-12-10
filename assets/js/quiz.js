@@ -193,7 +193,7 @@
                     c: "Indecisão na hora de escolher algo para comer",
                     d: "Política Brasileira"
                 },
-                correctAnswer: "c"
+                correctAnswer: "d"
             },
             {
                 question: "Qual seria o título da lápide dele?",
@@ -203,7 +203,7 @@
                     c: "Partiu ser feliz!",
                     d: "Cai fora. Estou dormido"
                 },
-                correctAnswer: "d"
+                correctAnswer: "a"
             }
         ];
     }
