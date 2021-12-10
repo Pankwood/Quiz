@@ -173,10 +173,10 @@
                     c: "Depende da comida",
                     d: "Depende da fome"
                 },
-                correctAnswer: "d"
+                correctAnswer: "c"
             },
             {
-                question: "Se o Danilo encontrasse uma lâmpada mágica, qual a primeira coisa que ela pediria?",
+                question: "Se o Danilo encontrasse uma lâmpada mágica, qual a primeira coisa que ele pediria?",
                 answers: {
                     a: "Dinheiro sem fim",
                     b: "Saúde",
@@ -188,19 +188,19 @@
             {
                 question: "O que mais irrita ele?",
                 answers: {
-                    a: "Barulho alto",
-                    b: "Desmarcar compromisso",
+                    a: "Ficar sem café",
+                    b: "Desmarcar compromisso em cima da hora",
                     c: "Indecisão na hora de escolher algo para comer",
-                    d: "Mexer no celular enquanto conversa"
+                    d: "Política Brasileira"
                 },
                 correctAnswer: "c"
             },
             {
                 question: "Qual seria o título da lápide dele?",
                 answers: {
-                    a: "Uma jornada de milagres",
-                    b: "Ter nascido me estragou a saúde",
-                    c: "Nunca matou quem não precisasse ser assassinado",
+                    a: "Tchau, foi legal!",
+                    b: "Melhor morrer do que perder a vida",
+                    c: "Partiu ser feliz!",
                     d: "Cai fora. Estou dormido"
                 },
                 correctAnswer: "d"
