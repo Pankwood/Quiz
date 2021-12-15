@@ -95,17 +95,6 @@ input, select, textarea {
 		background-image: url("./assets/images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
-
 /* Type */
 
 	body {
