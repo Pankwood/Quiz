@@ -8,6 +8,7 @@ import { QuizPageComponent } from './quiz-page/quiz-page.component';
 
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { QuizService } from './quiz.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HomeComponent } from './home/home.component';
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]),
   ],
-  providers: [],
+  providers: [QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

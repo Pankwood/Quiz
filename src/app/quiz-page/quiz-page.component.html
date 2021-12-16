@@ -8,7 +8,13 @@
                     <h2>Quanto você conhece seu amor?</h2>
                 </header>
                 <div class="quiz-container">
-                    <div id="quiz"></div>
+                    <div id="quiz">
+                        <ul>
+                            <li *ngFor="let item of quiz">
+                                {{item}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <a id="previous" class="button primary">Pergunta Anterior</a>
                 <a id="next" class="button primary">Próxima Pergunta</a>
