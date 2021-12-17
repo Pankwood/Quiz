@@ -208,6 +208,61 @@
         ];
     }
 
+    if (localStorage.getItem("user") === '?user=Bela') {
+        myQuestions = [
+            {
+                question: "Se o Danilo ganhasse na loteria, qual seria a primeira compra dele?",
+                answers: {
+                    a: "Barco",
+                    b: "Viagem",
+                    c: "Tim Hortons",
+                    d: "Ilha"
+                },
+                correctAnswer: "b"
+            },
+            {
+                question: "O que o Danilo acha de dividir comida?",
+                answers: {
+                    a: "Não se importa",
+                    b: "Nem pensar!",
+                    c: "Depende da comida",
+                    d: "Depende da fome"
+                },
+                correctAnswer: "c"
+            },
+            {
+                question: "Se o Danilo encontrasse uma lâmpada mágica, qual a primeira coisa que ele pediria?",
+                answers: {
+                    a: "Dinheiro sem fim",
+                    b: "Saúde",
+                    c: "Super Poderes",
+                    d: "Sabedoria"
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "O que mais irrita ele?",
+                answers: {
+                    a: "Ficar sem café",
+                    b: "Desmarcar compromisso em cima da hora",
+                    c: "Indecisão na hora de escolher algo para comer",
+                    d: "Política Brasileira"
+                },
+                correctAnswer: "d"
+            },
+            {
+                question: "Qual seria o título da lápide dele?",
+                answers: {
+                    a: "Tchau, foi legal!",
+                    b: "Melhor morrer do que perder a vida",
+                    c: "Partiu ser feliz!",
+                    d: "Cai fora. Estou dormido"
+                },
+                correctAnswer: "a"
+            }
+        ];
+    }
+
     // Kick things off
     buildQuiz();
 

@@ -43,7 +43,7 @@
 			<section id="content" class="main">
 				<div id="test"><span>Você acertou </span><span id="results"
 						style="color: black; text-align: center;"></span>
-					<span>pergunta(s). Agora é só aproveitar a(s) recompensa(s)!</span>
+					<span id="test1">pergunta(s). Agora é só aproveitar a(s) recompensa(s)!</span>
 				</div>
 				<span class="image"><img src="images/ticket1.png" alt="Muito abracos" id="recompensa1"
 						class="blur" /></span>
@@ -79,6 +79,14 @@
 		const resultsContainer = document.getElementById('results');
 		if (resultsContainer != null)
 			resultsContainer.innerHTML = localStorage.getItem("numCorrect");
+
+		if (localStorage.getItem("user") === '?user=Bela') {
+			$("#recompensa1").attr("src", "images/ticket1.png");
+			$("#recompensa2").attr("src", "images/ticket6.png");
+			$("#recompensa3").attr("src", "images/ticket7.png");
+			$("#recompensa4").attr("src", "images/ticket8.png");
+			$("#recompensa5").attr("src", "images/ticket9.png");
+		}
 	</script>
 </body>
 

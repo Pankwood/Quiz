@@ -124,9 +124,11 @@
 		speed: 1000
 	});
 
+	if (localStorage.getItem("user") === '?user=Bela')
+		$("#mytitle").text($("#mytitle").text().replace("Quanto você conhece seu amor?", "Quanto você conhece seu titio?"));
 
 	// Result images
-	if (localStorage.getItem("numCorrect") == 0)
+	if ((localStorage.getItem("numCorrect") == 0) && (localStorage.getItem("user") !== '?user=Bela'))
 		$("#test").text($("#test").text().replace("Você acertou \n\t\t\t\t\tpergunta(s). Agora é só aproveitar a(s) recompensa(s)!\n\t\t\t\t", "Como assim?? Voce errou todas!! Vai dormir na sala hoje!!!"));
 	if (localStorage.getItem("numCorrect") >= 1)
 		$('#recompensa1').removeClass('blur');
@@ -138,5 +140,12 @@
 		$('#recompensa4').removeClass('blur');
 	if (localStorage.getItem("numCorrect") >= 5)
 		$('#recompensa5').removeClass('blur');
+	if ((localStorage.getItem("user") === '?user=Bela') && (localStorage.getItem("numCorrect") == 0))
+		$("#test").text($("#test").text().replace("Você acertou \n\t\t\t\t\tpergunta(s). Agora é só aproveitar a(s) recompensa(s)!\n\t\t\t\t", "Como assim?? Voce errou todas!! Vou te dar mais uma chance."));
+	if ((localStorage.getItem("user") === '?user=Bela') && (localStorage.getItem("numCorrect") == 1))
+		$("#test").text($("#test").text().replace("Você acertou \n\t\t\t\t\tpergunta(s). Agora é só aproveitar a(s) recompensa(s)!\n\t\t\t\t", "Como assim?? Voce só acertou uma!! É sua última  chance heim."));
+	if ((localStorage.getItem("user") === '?user=Bela') && (localStorage.getItem("numCorrect") >= 1))
+		$("#test1").text($("#test1").text().replace("pergunta(s). Agora é só aproveitar a(s) recompensa(s)!", "pergunta(s). Escolha uma opção dos prêmios disponíveis."));
+
 
 })(jQuery);
