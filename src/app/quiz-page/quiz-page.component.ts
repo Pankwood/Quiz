@@ -6,12 +6,14 @@ import { QuizService } from '../quiz.service';
   templateUrl: './quiz-page.component.html',
   styleUrls: ['./quiz-page.component.css']
 })
+
+
 export class QuizPageComponent implements OnInit {
 
   quiz: string[];
-  constructor(service: QuizService) {
+  constructor(quizService: QuizService) {
 
-    this.quiz = service.getQuiz();
+    this.quiz = quizService.getQuiz();
   }
 
   ngOnInit(): void {

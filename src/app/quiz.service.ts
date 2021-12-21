@@ -8,6 +8,6 @@ export class QuizService {
   constructor() { }
 
   getQuiz() {
-    return ["Quiz1", "Quiz2", "Quiz3"]
+    return ["FirstOption", "SecondOption", "ThirdOption"]
   }
 }

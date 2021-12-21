@@ -502,6 +502,14 @@ input, select, textarea {
 
 /* Actions */
 
+ .actions {
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	width: calc(100% + 1em);
+}
+
 	ul.actions {
 		display: -moz-flex;
 		display: -webkit-flex;

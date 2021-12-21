@@ -1,28 +1,20 @@
-<div id="main">
-
-    <!-- Introduction -->
-    <section id="intro" class="main">
-        <div class="spotlight">
-            <div class="content">
-                <header class="major">
-                    <h2>Quanto você conhece seu amor?</h2>
-                </header>
-                <div class="quiz-container">
-                    <div id="quiz">
-                        <ul>
-                            <li *ngFor="let item of quiz">
-                                {{item}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a id="previous" class="button primary">Pergunta Anterior</a>
-                <a id="next" class="button primary">Próxima Pergunta</a>
-                <a id="submit" class="button success">Resultado</a>
-                <div id="results"></div>
+<div class="quiz-container">
+    <div id="quiz">
+        <div class="slide active-slide">
+            <div class="question"> Se o Danilo ganhasse na loteria, qual seria a primeira compra dele?
             </div>
-            <span class="image"><img src="./assets/images/questionGuy.jpg" alt="" /></span>
+            <div class="answers">
+                <div *ngFor="let item of quiz">
+                    <input type="radio" name="questionOne" id="{{item}}a" value="a">
+                    <label for="{{item}}a">
+                        {{item}}
+                    </label>
+                </div>
+            </div>
         </div>
-    </section>
-
+    </div>
 </div>
+<a id="previous" class="button primary">Pergunta Anterior</a>
+<a id="next" class="button primary">Próxima Pergunta</a>
+<a id="submit" class="button success">Resultado</a>
+<div id="results"></div>
