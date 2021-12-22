@@ -1,14 +1,21 @@
 <div class="quiz-container">
     <div id="quiz">
         <div class="slide active-slide">
-            <div class="question"> Se o Danilo ganhasse na loteria, qual seria a primeira compra dele?
-            </div>
-            <div class="answers">
-                <div *ngFor="let item of quiz">
-                    <input type="radio" name="questionOne" id="{{item}}a" value="a">
-                    <label for="{{item}}a">
-                        {{item}}
-                    </label>
+            <div class="question" *ngFor="let questions of questionsList;let questionsListIndex = index">
+                {{questions.question}}
+
+                <div class="answers">
+                    <div *ngFor="let item of questions.answers;let answerIndex = index">
+                        <input #answer type="radio" name="{{questions.id}}" id="{{item.answer+questions.id}}"
+                            value={{item.answer}}
+                            (click)="onClickMe($event, answer.value, answerIndex, questionsListIndex);">
+                        <label for="{{item.answer+questions.id}}">
+                            {{item.answer}}
+                        </label>
+                        <div *ngIf="clickStatus[answerIndex]">
+                            <p>{{answer.value + "? " + funnyIndexMessage}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
