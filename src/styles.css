@@ -727,15 +727,4 @@ input, select, textarea {
 
 	}
 
-/* Blur Image */
-		.blur{
-			filter: blur(5px);
-			-webkit-filter: blur(5px);
-		}
 
-		@media print
-		{    
-			.blur{
-				display: none!important;
-			}
-		}

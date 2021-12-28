@@ -9,6 +9,7 @@ import { QuizPageComponent } from './quiz-page/quiz-page.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { QuizService } from './quiz.service';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { QuizService } from './quiz.service';
     FooterComponent,
     HeaderComponent,
     QuizPageComponent,
-    HomeComponent
+    HomeComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'quiz-page', component: QuizPageComponent },
+      { path: 'result', component: ResultComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]),
   ],
