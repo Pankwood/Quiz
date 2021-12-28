@@ -1,13 +1,7 @@
 <div id="test"><span>Você acertou </span><span style="color: black; text-align: center;">{{quizResult}}</span>
     <span id="test1"> pergunta(s). Agora é só aproveitar a(s) recompensa(s)!</span>
 </div>
-<span class="image"><img src="./assets/images/ticket1.png" alt="Muito abracos" id="recompensa1"
-        [class.blur]="isBlur[0]" /></span>
-<span class="image"><img src="./assets/images/ticket2.png" alt="Beijo Calhiente" id="recompensa2"
-        [class.blur]="isBlur[1]" /></span>
-<span class="image"><img src="./assets/images/ticket3.png" alt="Massagem" id="recompensa3"
-        [class.blur]="isBlur[2]" /></span>
-<span class="image"><img src="./assets/images/ticket4.png" alt="Cafe na cama" id="recompensa4"
-        [class.blur]="isBlur[3]" /></span>
-<span class="image"><img src="./assets/images/ticket5.png" alt="Jantar Romantico" id="recompensa5"
-        [class.blur]="isBlur[4]" /></span>
+
+<span class="image" *ngFor="let question of questions; let i = index;">
+    <img [src]="question.image" [alt]="question.alt" [id]="question.id" [class.blur]="isBlur[i]" />
+</span>

@@ -12,10 +12,10 @@ export class QuizPageComponent implements OnInit {
 
   questionsList: any;
   clickStatus: Array<boolean>;
-  countCorrectAnswers: number;
+  countCorrectAnswers: number = 0;
   funnyMessage: string[];
-  funnyIndexMessage: string;
-  questionsAnswered: number[];
+  funnyIndexMessage: string = "";
+  questionsAnswered: number[] = [];
   quizContainer: any;
   resultsContainer: any;
 
@@ -25,11 +25,7 @@ export class QuizPageComponent implements OnInit {
 
     this.questionsList = quizService.getQuiz();
     this.clickStatus = new Array(this.questionsList[0].answers.lenght);
-    this.countCorrectAnswers = 0;
     this.funnyMessage = ["Are you sure?", "Humm...Maybe...", "Seriously? HAHA"];
-    this.funnyIndexMessage = "";
-    this.questionsAnswered = [];
-
   }
 
   ngOnInit(): void {

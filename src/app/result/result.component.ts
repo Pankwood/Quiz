@@ -6,23 +6,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-
-  quizResult: number;
-  isBlur: boolean[];
-
-  constructor() {
-    this.quizResult = 0;
-    this.isBlur = []
-  }
+  quizResult: number = 0;
+  isBlur: boolean[] = [];
+  questions = [
+    {
+      image: './assets/images/ticket1.png',
+      alt: 'Muito abracos',
+      id: 'recompensa1',
+    },
+    {
+      image: './assets/images/ticket2.png',
+      alt: 'Beijo Calhiente',
+      id: 'recompensa2',
+    }, {
+      image: './assets/images/ticket3.png',
+      alt: 'Massagem',
+      id: 'recompensa3',
+    }, {
+      image: './assets/images/ticket4.png',
+      alt: 'Cafe na cama',
+      id: 'recompensa4',
+    }, {
+      image: './assets/images/ticket5.png',
+      alt: 'Jantar Romantico',
+      id: 'recompensa5',
+    },
+  ];
 
   ngOnInit(): void {
-    this.quizResult = parseInt(localStorage.getItem("numCorrect") ?? "0", this.quizResult);
+    this.quizResult = parseInt(localStorage.getItem("numCorrect") ?? "0", 10)
 
-    const numberOfImages = document.querySelectorAll('app-result > .image').length;
-    for (let i = 0; i < numberOfImages; i++) {
+    for (let i = 0; i < 5; i++) {
       this.isBlur[i] = this.quizResult < i + 1;
-
     }
   }
-
 }
