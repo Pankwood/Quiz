@@ -36,7 +36,7 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
     this.quizResult = parseInt(localStorage.getItem("numCorrect") ?? "0", 10)
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < this.questions.length; i++) {
       this.isBlur[i] = this.quizResult < i + 1;
     }
   }

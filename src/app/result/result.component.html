@@ -1,6 +1,5 @@
-<div id="test"><span>Você acertou </span><span style="color: black; text-align: center;">{{quizResult}}</span>
-    <span id="test1"> pergunta(s). Agora é só aproveitar a(s) recompensa(s)!</span>
-</div>
+<span>Você acertou {{quizResult}} pergunta(s). Agora é só aproveitar a(s) recompensa(s)!</span>
+
 
 <span class="image" *ngFor="let question of questions; let i = index;">
     <img [src]="question.image" [alt]="question.alt" [id]="question.id" [class.blur]="isBlur[i]" />
