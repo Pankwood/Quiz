@@ -31,8 +31,6 @@ export class QuizService {
         ],
         correctAnswer: "Iate"
       }
-
-
     ]
   }
 }

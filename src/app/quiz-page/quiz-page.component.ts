@@ -18,7 +18,7 @@ export class QuizPageComponent implements OnInit {
   questionsAnswered: number[] = [];
   quizContainer: any;
   resultsContainer: any;
-
+  pageNumber: number = 0;
 
 
   constructor(quizService: QuizService) {
@@ -26,6 +26,16 @@ export class QuizPageComponent implements OnInit {
     this.questionsList = quizService.getQuiz();
     this.clickStatus = new Array(this.questionsList[0].answers.lenght);
     this.funnyMessage = ["Are you sure?", "Humm...Maybe...", "Seriously? HAHA"];
+  }
+
+  previous() {
+    if (this.pageNumber > 0)
+      this.pageNumber--;
+  }
+  next() {
+    if (this.pageNumber <= this.questionsList.length)
+      this.pageNumber++;
+
   }
 
   ngOnInit(): void {
