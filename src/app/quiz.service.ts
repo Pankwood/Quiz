@@ -22,14 +22,14 @@ export class QuizService {
       },
       {
         id: 2,
-        question: "Se a Danilo ganhasse na loteria, qual seria a primeira compra dela?",
+        question: "Qual seu filme predileto?",
         answers: [
-          { answer: "Roupas" },
-          { answer: "Sorvete" },
-          { answer: "Mansão" },
-          { answer: "Iate" }
+          { answer: "Silent Hill" },
+          { answer: "Matrix" },
+          { answer: "The Shining" },
+          { answer: "MIB" }
         ],
-        correctAnswer: "Iate"
+        correctAnswer: "MIB"
       }
     ]
   }

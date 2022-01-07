@@ -1,26 +1,24 @@
-<div id="quiz">
-    <div class="question" *ngFor="let questions of questionsList;let questionsListIndex = index">
-        <div *ngIf="questionsListIndex == pageNumber">
-            {{questions.question}}<br /><br />
-            <div class="answers">
-                <div *ngFor="let item of questions.answers;let answerIndex = index">
-                    <input #answer type="radio" name="{{questions.id}}" id="{{item.answer+questions.id}}"
-                        value={{item.answer}}
-                        (click)="onClickMe($event, answer.value, answerIndex, questionsListIndex);">
-                    <label for="{{item.answer+questions.id}}">
-                        {{item.answer}}
-                    </label>
-                    <div *ngIf="clickStatus[answerIndex]">
-                        <p>{{answer.value + "? " + funnyIndexMessage}}</p>
+<form #f="ngForm">
+    <div id="quiz" class="form-group">
+        <div class="question" *ngFor="let quizQuestions of quiz;let i = index">
+            <div [hidden]="i != pageNumber">
+                {{quizQuestions.question}}<br /><br />
+                <div class="answers">
+                    <div *ngFor="let answers of quizQuestions.answers">
+                        <input required type="radio" name="{{quizQuestions.id}}" ngModel
+                            id="{{answers.answer+quizQuestions.id}}" value="{{answers.answer}}" class="form-control">
+                        <label for="{{answers.answer+quizQuestions.id}}">
+                            {{answers.answer}}
+                        </label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<a id="previous" *ngIf="!(pageNumber == 0)" (click)="previous()" class="button primary">Pergunta Anterior</a>
-<a id="next" *ngIf="!(pageNumber >= questionsList.length-1)" (click)="next()" class="button primary">Próxima
-    Pergunta</a>
-<a routerLink="/result" (click)="submitClick()" *ngIf="(pageNumber == questionsList.length-1)"
-    class="button success">Resultado</a>
-<div id="results"></div>
+    <!-- <p>{{f.value | json}}</p> -->
+    <a id="previous" *ngIf="pageNumber != 0" (click)="previous()" class="button primary">Pergunta Anterior</a>
+    <a id="next" *ngIf="pageNumber < quiz.length-1" (click)="next()" class="button primary">Próxima
+        Pergunta</a>
+    <a routerLink="/result" (click)="submit(f)" *ngIf="(pageNumber == quiz.length-1)"
+        class="button success">Resultado</a>
+</form>

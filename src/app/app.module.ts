@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { QuizService } from './quiz.service';
 import { ResultComponent } from './result/result.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ResultComponent } from './result/result.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'quiz-page', component: QuizPageComponent },
