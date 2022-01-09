@@ -30,6 +30,17 @@ export class QuizService {
           { answer: "MIB" }
         ],
         correctAnswer: "MIB"
+      },
+      {
+        id: 3,
+        question: "Qual sua cor predileta",
+        answers: [
+          { answer: "Amarela" },
+          { answer: "Azul" },
+          { answer: "Verde" },
+          { answer: "Vermelha" }
+        ],
+        correctAnswer: "Amarela"
       }
     ]
   }

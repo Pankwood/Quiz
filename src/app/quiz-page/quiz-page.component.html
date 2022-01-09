@@ -3,7 +3,7 @@
         <div class="question" *ngFor="let quizQuestions of quiz;let i = index">
             <div [hidden]="i != pageNumber">
                 {{quizQuestions.question}}<br /><br />
-                <div class="answers" ngModelGroup="{{'myGroup'+i}}">
+                <div class="answers" ngModelGroup="{{'Question'+i}}">
                     <div *ngFor="let answers of quizQuestions.answers">
                         <input required type="radio" name="{{quizQuestions.id}}" ngModel
                             id="{{answers.answer+quizQuestions.id}}" value="{{answers.answer}}" class="form-control">

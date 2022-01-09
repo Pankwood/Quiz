@@ -1,0 +1,98 @@
+<form>
+
+    <div class="form-group">
+        <label for="quizTitle" class="col-12 col-form-label">Digite o nome do quiz</label>
+        <div class="col-12">
+            <input type="text" name="quizTitle" id="quizTitle" class="form-control" required maxlength="60"
+                minlength="5">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="quizQuestion" class="col-12 col-form-label">Digite sua pergunta</label>
+        <div class="col-12">
+            <input type="text" name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60"
+                minlength="5">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="quizOption" class="col-12 col-form-label">Adicione suas opcoes de resposta e marque a
+            correta</label>
+    </div>
+    <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span [ngClass]="{'badge':true, 'bg-secondary':this.isValid, 'bg-success':!this.isValid}"
+                    (click)="this.isValid = !this.isValid">
+                    <i class="bi bi-check-circle-fill"></i>
+                </span>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-secondary" (click)="add()">
+                    <i class="bi-plus-circle-fill"></i>
+                </span>
+            </div>
+        </div>
+
+
+
+        <div class="row g-3 align-items-center" id="option2" *ngIf="option2">
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span [ngClass]="{'badge':true, 'bg-secondary':this.isValid2, 'bg-success':!this.isValid2}"
+                    (click)="this.isValid2 = !this.isValid2">
+                    <i class="bi bi-check-circle-fill"></i>
+                </span>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-secondary" (click)="this.option2 = false; this.count=this.count-1">
+                    <i class="bi bi-trash-fill"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center" id="option3" *ngIf="option3">
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span [ngClass]="{'badge':true, 'bg-secondary':this.isValid3, 'bg-success':!this.isValid3}"
+                    (click)="this.isValid3 = !this.isValid3">
+                    <i class="bi bi-check-circle-fill"></i>
+                </span>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-secondary" (click)="this.option3 = false; this.count=this.count-1">
+                    <i class="bi bi-trash-fill"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center" id="option4" *ngIf="option4">
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span [ngClass]="{'badge':true, 'bg-secondary':this.isValid4, 'bg-success':!this.isValid4}"
+                    (click)="this.isValid4 = !this.isValid4">
+                    <i class="bi bi-check-circle-fill"></i>
+                </span>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-secondary" (click)="this.option4 = false; this.count=this.count-1">
+                    <i class="bi bi-trash-fill"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <button class="btn btn success">Submit</button>
+
+
+</form>

@@ -9,6 +9,9 @@ import { QuizService } from '../quiz.service';
 })
 
 export class QuizPageComponent {
+  static readonly GROUP_FORM: string = "Question";
+  static readonly CORRECT_ANSWER: string = "numCorrect";
+
   quiz: any;
   countCorrectAnswers: number = 0;
   pageNumber: number = 0;
@@ -24,12 +27,7 @@ export class QuizPageComponent {
   }
 
   next(form: any) {
-    this.isValid = false;
-    //There is a bug here
-    Object.values(form.controls).forEach(ctl => {
-      if ((ctl as FormControl).valid)
-        this.isValid = true;
-    });
+    this.isValid = form.controls[QuizPageComponent.GROUP_FORM + this.pageNumber].valid;
 
     if ((this.pageNumber <= this.quiz.length) && (this.isValid))
       this.pageNumber++;
@@ -40,7 +38,7 @@ export class QuizPageComponent {
       this.countCorrectAnswers += ((control as FormControl).value[i + 1] == this.quiz[i].correctAnswer) ? +1 : 0;
     });
 
-    localStorage.setItem('numCorrect', this.countCorrectAnswers.toString());
+    localStorage.setItem(QuizPageComponent.CORRECT_ANSWER, this.countCorrectAnswers.toString());
   }
 
 }
