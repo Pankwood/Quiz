@@ -728,4 +728,6 @@ input, select, textarea {
 
 	}
 
-
+	.form-control.ng-touched.ng-invalid{
+		border: 2px solid red;
+	}

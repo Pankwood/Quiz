@@ -12,6 +12,7 @@ import { QuizService } from './quiz.service';
 import { ResultComponent } from './result/result.component';
 import { FormsModule } from '@angular/forms';
 import { QuizCreatorComponent } from './quiz-creator/quiz-creator.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { QuizCreatorComponent } from './quiz-creator/quiz-creator.component';
     QuizPageComponent,
     HomeComponent,
     ResultComponent,
-    QuizCreatorComponent
+    QuizCreatorComponent,
+    QuizAnswersComponent
   ],
   imports: [
     BrowserModule,
