@@ -4,7 +4,11 @@
     cursor: pointer;
 }
 
-button:disabled{
+.btn-toolbar {
+    margin-top: 1rem;
+}
+
+button:disabled {
     cursor: not-allowed;
     pointer-events: all !important;
 }

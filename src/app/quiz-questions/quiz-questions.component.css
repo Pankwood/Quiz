@@ -1,0 +1,13 @@
+.question > div{
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.question:nth-child(odd) > div{
+    background-color: lavender;
+}
+
+.question:nth-child(even) > div{
+    background-color: rgb(232, 250, 230);
+}
