@@ -20,7 +20,8 @@
     <br />
     <br />
     <div class="btn-toolbar">
-        <button type="button" (click)="add()" [disabled]="numberOfQuestion >= 5" class="btn btn-primary mx-2">Add
+        <button type="button" (click)="add()" [disabled]="numberOfQuestion >= numberOfQuestionsAllowed"
+            class="btn btn-primary mx-2">Add
             Question</button>
         <button type="button" (click)="submit(form)" class="btn btn-success">Submit</button>
     </div>

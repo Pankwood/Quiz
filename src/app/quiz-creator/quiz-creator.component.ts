@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { QuizQuestionsComponent } from '../quiz-questions/quiz-questions.component';
+import { constants } from '../constants';
 
 @Component({
   selector: 'app-quiz-creator',
@@ -8,6 +8,7 @@ import { QuizQuestionsComponent } from '../quiz-questions/quiz-questions.compone
 })
 export class QuizCreatorComponent {
   numberOfQuestion: number = 0;
+  numberOfQuestionsAllowed: number = constants.NUMBER_OF_QUESTIONS_ALLOWED;
 
   add() {
     this.numberOfQuestion = this.numberOfQuestion + 1;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { QuizService } from '../quiz.service';
+import { constants } from '../constants';
 
 @Component({
   selector: 'app-quiz-page',
@@ -9,9 +10,6 @@ import { QuizService } from '../quiz.service';
 })
 
 export class QuizPageComponent {
-  static readonly GROUP_FORM: string = "Question";
-  static readonly CORRECT_ANSWER: string = "numCorrect";
-
   quiz: any;
   countCorrectAnswers: number = 0;
   pageNumber: number = 0;
@@ -27,7 +25,7 @@ export class QuizPageComponent {
   }
 
   next(form: any) {
-    this.isValid = form.controls[QuizPageComponent.GROUP_FORM + this.pageNumber].valid;
+    this.isValid = form.controls[constants.GROUP_FORM + this.pageNumber].valid;
 
     if ((this.pageNumber <= this.quiz.length) && (this.isValid))
       this.pageNumber++;
@@ -38,7 +36,7 @@ export class QuizPageComponent {
       this.countCorrectAnswers += ((control as FormControl).value[i + 1] == this.quiz[i].correctAnswer) ? +1 : 0;
     });
 
-    localStorage.setItem(QuizPageComponent.CORRECT_ANSWER, this.countCorrectAnswers.toString());
+    localStorage.setItem(constants.CORRECT_ANSWER, this.countCorrectAnswers.toString());
   }
 
 }

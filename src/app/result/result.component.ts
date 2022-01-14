@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizPageComponent } from '../quiz-page/quiz-page.component';
+import { constants } from '../constants';
 
 @Component({
   selector: 'app-result',
@@ -35,7 +35,7 @@ export class ResultComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.quizResult = parseInt(localStorage.getItem(QuizPageComponent.CORRECT_ANSWER) ?? "0", 10)
+    this.quizResult = parseInt(localStorage.getItem(constants.CORRECT_ANSWER) ?? "0", 10)
 
     for (let i = 0; i < this.questions.length; i++) {
       this.isBlur[i] = this.quizResult < i + 1;
