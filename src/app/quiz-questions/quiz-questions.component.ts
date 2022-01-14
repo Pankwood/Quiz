@@ -8,14 +8,9 @@ import { constants } from '../constants';
 })
 export class QuizQuestionsComponent implements OnInit {
 
-  @Input() numberOfQuestion: number = 0;
-
+  @Input() numberOfQuestion: number = constants.NUMBER_OF_INITIAL_QUESTIONS;
   numbers: number[] = [];
   numberOfAnswerAllowed: number = constants.NUMBER_OF_ANSWERS_ALLOWED;
-
-  constructor() {
-
-  }
 
   ngOnInit(): void {
     this.numbers = Array(constants.NUMBER_OF_QUESTIONS_ALLOWED).fill(0).map((_x, i) => i);

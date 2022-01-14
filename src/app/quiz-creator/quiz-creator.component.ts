@@ -7,7 +7,7 @@ import { constants } from '../constants';
   styleUrls: ['./quiz-creator.component.css'],
 })
 export class QuizCreatorComponent {
-  numberOfQuestion: number = 0;
+  numberOfQuestion: number = constants.NUMBER_OF_INITIAL_QUESTIONS;
   numberOfQuestionsAllowed: number = constants.NUMBER_OF_QUESTIONS_ALLOWED;
 
   add() {

@@ -1,5 +1,5 @@
 <div *ngFor="let item of numbers; let i = index;">
-    <div *ngIf="i <= numberOfQuestion">
+    <div *ngIf="i <= numberOfQuestion-1">
         <div class="col-12">
             <label for="quizQuestion" class="col-12 col-form-label">Digite sua pergunta</label>
             <input name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60" ngModel
