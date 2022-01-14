@@ -2,13 +2,10 @@
     <div *ngIf="i <= numberOfQuestion">
         <div class="col-12">
             <label for="quizQuestion" class="col-12 col-form-label">Digite sua pergunta</label>
-            <input name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60" minlength="5"
-                ngModel #quizQuestion="ngModel">
+            <input name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60" ngModel
+                #quizQuestion="ngModel">
             <div class="alert alert-danger" *ngIf="quizQuestion.touched && quizQuestion.invalid">
                 <div *ngIf="quizQuestion.errors?.['required']">Quiz Title is required</div>
-                <div *ngIf="quizQuestion.errors?.['minlength']">Min lenght is
-                    {{quizQuestion.errors?.['minlength'].requiredLength}}
-                </div>
                 <div *ngIf="quizQuestion.errors?.['maxlength']">Max length is
                     {{quizQuestion.errors?.['maxlength'].requiredLength}}
                 </div>

@@ -3,13 +3,10 @@
         <div class="col-12">
             <strong style="color:black"><label for="quizTitle" class="col-12 col-form-label">Digite o nome do
                     quiz</label></strong>
-            <input name="quizTitle" id="quizTitle" class="form-control" required maxlength="60" minlength="5" ngModel
+            <input name="quizTitle" id="quizTitle" class="form-control" required maxlength="60" ngModel
                 #quizTitle="ngModel">
             <div class="alert alert-danger" *ngIf="quizTitle.touched && quizTitle.invalid">
                 <div *ngIf="quizTitle.errors?.['required']">Quiz Title is required</div>
-                <div *ngIf="quizTitle.errors?.['minlength']">Min lenght is
-                    {{quizTitle.errors?.['minlength'].requiredLength}}
-                </div>
                 <div *ngIf="quizTitle.errors?.['maxlength']">Max length is
                     {{quizTitle.errors?.['maxlength'].requiredLength}}
                 </div>
