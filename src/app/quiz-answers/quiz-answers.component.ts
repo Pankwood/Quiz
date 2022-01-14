@@ -10,7 +10,7 @@ import { ControlContainer, NgForm } from '@angular/forms';
 
 export class QuizAnswersComponent implements OnInit {
 
-  @Input('numberOfAnswer') totalAnswers: number = 0;
+  @Input() numberOfAnswer: number = 0;
   defaultAnswers: number = 2;
 
   numbers: number[] = [];
@@ -20,13 +20,13 @@ export class QuizAnswersComponent implements OnInit {
   count = 1;
 
   ngOnInit(): void {
-    this.numbers = Array(this.totalAnswers).fill(0).map((_x, i) => i);
-    this.option = Array(this.totalAnswers).fill(null).map((_x, i) => i <= this.defaultAnswers - 1);
-    this.isValid = Array(this.totalAnswers).fill(1);
+    this.numbers = Array(this.numberOfAnswer).fill(0).map((_x, i) => i);
+    this.option = Array(this.numberOfAnswer).fill(null).map((_x, i) => i <= this.defaultAnswers - 1);
+    this.isValid = Array(this.numberOfAnswer).fill(1);
   }
 
   add() {
-    if (this.count < this.totalAnswers - 1) {
+    if (this.count < this.numberOfAnswer - 1) {
       this.count = this.count + 1;
       this.option[this.option.findIndex(a => a == false)] = true;
     }

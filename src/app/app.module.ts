@@ -13,6 +13,7 @@ import { ResultComponent } from './result/result.component';
 import { FormsModule } from '@angular/forms';
 import { QuizCreatorComponent } from './quiz-creator/quiz-creator.component';
 import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
+import { QuizQuestionsComponent } from './quiz-questions/quiz-questions.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
     HomeComponent,
     ResultComponent,
     QuizCreatorComponent,
-    QuizAnswersComponent
+    QuizAnswersComponent,
+    QuizQuestionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,10 @@
 
-/* .form-inline > .form-group {
-display: inline-block;
-margin-bottom: 0;
-vertical-align: middle;
-} */
-
-.badge:hover{
+.badge:hover {
     opacity: 0.5;
     cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
+    pointer-events: all !important;
 }

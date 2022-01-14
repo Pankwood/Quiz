@@ -374,6 +374,7 @@ input, select, textarea {
 		.button:disabled {
 			pointer-events: none;
 			opacity: 0.25;
+			cursor:not-allowed;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -680,7 +681,7 @@ input, select, textarea {
 			}
 
 			header.major p {
-				font-size: 1em;
+				font-size: 0.7em;
 				letter-spacing: 0;
 			}
 

@@ -1,3 +1,5 @@
+<label for="quizAnswer0" class="col-12 col-form-label">Adicione suas opcoes de resposta e marque a
+    correta</label>
 <div *ngFor="let i of numbers;" class="mt-1">
     <div class="row g-1 align-items-center" *ngIf="option[i]">
         <div class="col-auto">
@@ -20,7 +22,7 @@
             </span>
         </div>
         <div class="col-auto" *ngIf="i == defaultAnswers-1">
-            <span class="badge bg-secondary" [class.disable]="count == totalAnswers-1" (click)="add()">
+            <span class="badge bg-secondary" [class.disable]="count == numberOfAnswer-1" (click)="add()">
                 <i class="bi bi-plus-circle-fill"></i>
             </span>
         </div>

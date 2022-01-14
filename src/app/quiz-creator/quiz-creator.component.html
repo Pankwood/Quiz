@@ -1,7 +1,8 @@
 <form #form="ngForm">
     <div class="form-group">
-        <label for="quizTitle" class="col-12 col-form-label">Digite o nome do quiz</label>
         <div class="col-12">
+            <strong style="color:black"><label for="quizTitle" class="col-12 col-form-label">Digite o nome do
+                    quiz</label></strong>
             <input name="quizTitle" id="quizTitle" class="form-control" required maxlength="60" minlength="5" ngModel
                 #quizTitle="ngModel">
             <div class="alert alert-danger" *ngIf="quizTitle.touched && quizTitle.invalid">
@@ -14,28 +15,13 @@
                 </div>
             </div>
         </div>
-        <label for="quizQuestion" class="col-12 col-form-label">Digite sua pergunta</label>
-        <div class="col-12">
-            <input name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60" minlength="5"
-                ngModel #quizQuestion="ngModel">
-            <div class="alert alert-danger" *ngIf="quizQuestion.touched && quizQuestion.invalid">
-                <div *ngIf="quizQuestion.errors?.['required']">Quiz Title is required</div>
-                <div *ngIf="quizQuestion.errors?.['minlength']">Min lenght is
-                    {{quizQuestion.errors?.['minlength'].requiredLength}}
-                </div>
-                <div *ngIf="quizTitle.errors?.['maxlength']">Max length is
-                    {{quizQuestion.errors?.['maxlength'].requiredLength}}
-                </div>
-            </div>
-        </div>
-        <label for="quizOption" class="col-12 col-form-label">Adicione suas opcoes de resposta e marque a
-            correta</label>
-        <app-quiz-answers [numberOfAnswer]="5"></app-quiz-answers>
+        <app-quiz-questions [numberOfQuestion]="numberOfQuestion"></app-quiz-questions>
     </div>
     <br />
     <br />
     <div class="btn-toolbar">
-        <button type="button" (click)="submit(form)" class="btn btn-primary mx-2">Add Question</button>
+        <button type="button" (click)="add()" [disabled]="numberOfQuestion >= 5" class="btn btn-primary mx-2">Add
+            Question</button>
         <button type="button" (click)="submit(form)" class="btn btn-success">Submit</button>
     </div>
 </form>
