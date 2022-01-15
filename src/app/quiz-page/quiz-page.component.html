@@ -1,5 +1,6 @@
 <form #f="ngForm">
     <div id="quiz" class="form-group">
+        <p>{{quiz.quizTitle}}</p>
         <div class="question" *ngFor="let quizQuestions of quiz;let i = index">
             <div [hidden]="i != pageNumber">
                 {{quizQuestions.question}}<br /><br />

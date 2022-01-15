@@ -16,5 +16,6 @@ export class QuizCreatorComponent {
   }
   submit(form: any) {
     form.control.markAllAsTouched();
+    console.log(form);
   }
 }

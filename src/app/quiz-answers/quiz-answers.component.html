@@ -3,7 +3,8 @@
 <div *ngFor="let i of numbers;" class="mt-1">
     <div class="row g-1 align-items-center" *ngIf="option[i]">
         <div class="col-auto">
-            <input [name]="'quizAnswer'+ i" [id]="'quizAnswer'+ i" class="form-control"
+            <input [name]="'question' + questionIndex +'quizAnswer'+ i"
+                [id]="'question' + questionIndex +'quizAnswer'+ i" class="form-control"
                 [required]="i <= defaultAnswers-1" ngModel #quizAnswer="ngModel">
             <div class="alert alert-danger" *ngIf="quizAnswer.touched && quizAnswer.invalid">
                 <div *ngIf="quizAnswer.errors?.['required']">Quiz Title is required</div>

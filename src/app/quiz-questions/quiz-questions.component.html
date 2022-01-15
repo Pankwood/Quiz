@@ -1,9 +1,9 @@
 <div *ngFor="let item of numbers; let i = index;" class="question">
     <div *ngIf="i <= numberOfQuestion-1">
         <div class="col-12">
-            <label for="quizQuestion" class="col-12 col-form-label">Digite sua pergunta</label>
-            <input name="quizQuestion" id="quizQuestion" class="form-control" required maxlength="60" ngModel
-                #quizQuestion="ngModel">
+            <label [for]="'quizQuestion'+i" class="col-12 col-form-label">Digite sua pergunta</label>
+            <input [name]="'quizQuestion'+i" [id]="'quizQuestion'+i" class="form-control" required maxlength="60"
+                ngModel #quizQuestion="ngModel">
             <div class="alert alert-danger" *ngIf="quizQuestion.touched && quizQuestion.invalid">
                 <div *ngIf="quizQuestion.errors?.['required']">Quiz Title is required</div>
                 <div *ngIf="quizQuestion.errors?.['maxlength']">Max length is
@@ -11,6 +11,6 @@
                 </div>
             </div>
         </div>
-        <app-quiz-answers [numberOfAnswer]="numberOfAnswerAllowed"></app-quiz-answers>
+        <app-quiz-answers [numberOfAnswer]="numberOfAnswerAllowed" [questionIndex]="i"></app-quiz-answers>
     </div>
 </div>

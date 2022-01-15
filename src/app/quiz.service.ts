@@ -7,38 +7,61 @@ export class QuizService {
 
   constructor() { }
 
-  getQuiz() {
+  getQuiz(value: any) {
+    value = value[0];
     return [
       {
         id: 1,
-        question: "Se a Juliana ganhasse na loteria, qual seria a primeira compra dela?",
+        question: value.quizQuestion0,
         answers: [
-          { answer: "Roupas" },
-          { answer: "Viagem" },
-          { answer: "Mansão" },
-          { answer: "Iate" }
+          { answer: value.question0quizAnswer0 },
+          { answer: value.question0quizAnswer1 },
+          { answer: value.question0quizAnswer2 },
+          { answer: value.question0quizAnswer3 }
         ],
         correctAnswer: "Viagem"
       },
       {
         id: 2,
-        question: "Qual seu filme predileto?",
+        question: value.quizQuestion1,
         answers: [
-          { answer: "Silent Hill" },
-          { answer: "Matrix" },
-          { answer: "The Shining" },
-          { answer: "MIB" }
+          { answer: value.question1quizAnswer0 },
+          { answer: value.question1quizAnswer1 },
+          { answer: value.question1quizAnswer2 },
+          { answer: value.question1quizAnswer3 }
         ],
         correctAnswer: "MIB"
       },
       {
         id: 3,
-        question: "Qual sua cor predileta",
+        question: value.quizQuestion2,
         answers: [
-          { answer: "Amarela" },
-          { answer: "Azul" },
-          { answer: "Verde" },
-          { answer: "Vermelha" }
+          { answer: value.question2quizAnswer0 },
+          { answer: value.question2quizAnswer1 },
+          { answer: value.question2quizAnswer2 },
+          { answer: value.question2quizAnswer3 }
+        ],
+        correctAnswer: "Amarela"
+      },
+      {
+        id: 4,
+        question: value.quizQuestion3,
+        answers: [
+          { answer: value.question3quizAnswer0 },
+          { answer: value.question3quizAnswer1 },
+          { answer: value.question3quizAnswer2 },
+          { answer: value.question3quizAnswer3 }
+        ],
+        correctAnswer: "Amarela"
+      },
+      {
+        id: 4,
+        question: value.quizQuestion4,
+        answers: [
+          { answer: value.question4quizAnswer0 },
+          { answer: value.question4quizAnswer1 },
+          { answer: value.question4quizAnswer2 },
+          { answer: value.question4quizAnswer3 }
         ],
         correctAnswer: "Amarela"
       }

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { QuizService } from '../quiz.service';
 import { constants } from '../constants';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-quiz-page',
@@ -9,14 +10,23 @@ import { constants } from '../constants';
   styleUrls: ['./quiz-page.component.css']
 })
 
-export class QuizPageComponent {
+export class QuizPageComponent implements OnInit {
+
+  firstParam: string = "";
   quiz: any;
   countCorrectAnswers: number = 0;
   pageNumber: number = 0;
   isValid: boolean = true;
 
-  constructor(quizService: QuizService) {
-    this.quiz = quizService.getQuiz();
+  constructor(quizService: QuizService, private route: ActivatedRoute
+  ) {
+
+    let str = route.snapshot.queryParamMap.get('build') ?? "";
+
+    this.quiz = quizService.getQuiz(JSON.parse(str));
+  }
+
+  ngOnInit(): void {
   }
 
   previous() {

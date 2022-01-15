@@ -20,4 +20,5 @@
             Question</button>
         <button type="button" (click)="submit(form)" class="btn btn-success">Submit</button>
     </div>
+    <a [href]="'http://localhost:4200/quiz-page?build=[' + [(form.value | json)] +']' ">link</a>
 </form>

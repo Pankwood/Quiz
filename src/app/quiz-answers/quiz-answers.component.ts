@@ -11,6 +11,8 @@ import { ControlContainer, NgForm } from '@angular/forms';
 export class QuizAnswersComponent implements OnInit {
 
   @Input() numberOfAnswer: number = 0;
+  @Input() questionIndex: number = 0;
+
   defaultAnswers: number = 2;
 
   numbers: number[] = [];
