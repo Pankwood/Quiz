@@ -729,15 +729,15 @@ input, select, textarea {
 
 	}
 
-	.form-control.ng-touched.ng-invalid{
+	.form-control.ng-touched.ng-invalid {
 		border: 1px solid red;
 	}
 
-	.form-control{
+	.form-control {
 		max-height: 1.8rem;
 	}
 
-	.alert{
-		padding: 0;
-		font-size: .8rem;
+	.alert {
+		padding: 0 2px;
+		font-size: .6rem;
 	}

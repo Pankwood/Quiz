@@ -1,11 +1,11 @@
 <div *ngFor="let item of numbers; let i = index;" class="question">
     <div *ngIf="i <= numberOfQuestion-1">
         <div class="col-12">
-            <label [for]="'quizQuestion'+i" class="col-12 col-form-label">Digite sua pergunta</label>
+            <label [for]="'quizQuestion'+i" class="col-12 col-form-label">Question</label>
             <input [name]="'quizQuestion'+i" [id]="'quizQuestion'+i" class="form-control" required maxlength="60"
                 ngModel #quizQuestion="ngModel">
             <div class="alert alert-danger" *ngIf="quizQuestion.touched && quizQuestion.invalid">
-                <div *ngIf="quizQuestion.errors?.['required']">Quiz Title is required</div>
+                <div *ngIf="quizQuestion.errors?.['required']">Question is required</div>
                 <div *ngIf="quizQuestion.errors?.['maxlength']">Max length is
                     {{quizQuestion.errors?.['maxlength'].requiredLength}}
                 </div>

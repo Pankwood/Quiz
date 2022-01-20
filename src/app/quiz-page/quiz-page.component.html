@@ -1,9 +1,9 @@
 <form #f="ngForm">
     <div id="quiz" class="form-group">
-        <p>{{quiz.quizTitle}}</p>
         <div class="question" *ngFor="let quizQuestions of quiz;let i = index">
             <div [hidden]="i != pageNumber">
-                {{quizQuestions.question}}<br /><br />
+                <p>{{quizQuestions.quizTitle}}</p>
+                <p>{{quizQuestions.question}}</p>
                 <div class="answers" ngModelGroup="{{'Question'+i}}">
                     <div *ngFor="let answers of quizQuestions.answers">
                         <input required type="radio" name="{{quizQuestions.id}}" ngModel
@@ -12,7 +12,8 @@
                             {{answers.answer}}
                         </label>
                     </div>
-                    <div *ngIf="!isValid"><small style="color:red; font-size: smaller;">Selecione uma opção</small>
+                    <div class="alert alert-danger" *ngIf="!isValid">
+                        Select one
                     </div>
                 </div>
             </div>
@@ -20,9 +21,12 @@
     </div>
 
     <!-- <p>{{f.value | json}}</p> -->
-    <button id="previous" *ngIf="pageNumber != 0" (click)="previous()" class="button primary">Pergunta Anterior</button>
-    <button id="next" *ngIf="pageNumber < quiz.length-1" (click)="next(f)" class="button primary">Próxima
-        Pergunta</button>
-    <button type="button" routerLink="/result" (click)="submit(f)" [disabled]="f.invalid"
-        *ngIf="(pageNumber == quiz.length-1)" class="button success">Resultado</button>
+    <div class="btn-toolbar">
+        <button id="previous" *ngIf="pageNumber != 0" (click)="previous()" class="btn btn-primary mx-2">Previous
+            Question</button>
+        <button id="next" *ngIf="pageNumber < quiz.length-1" (click)="next(f)" class="btn btn-primary">Next
+            Question</button>
+        <button type="button" routerLink="/result" (click)="submit(f)" [disabled]="f.invalid"
+            *ngIf="(pageNumber == quiz.length-1)" class="btn btn-success">Get your reward</button>
+    </div>
 </form>

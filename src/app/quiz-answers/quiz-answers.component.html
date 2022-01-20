@@ -1,5 +1,4 @@
-<label for="quizAnswer0" class="col-12 col-form-label">Adicione suas opcoes de resposta e marque a
-    correta</label>
+<label for="quizAnswer0" class="col-12 col-form-label">Add your options and check the correct one</label>
 <div *ngFor="let i of numbers;" class="mt-1">
     <div class="row g-1 align-items-center" *ngIf="option[i]">
         <div class="col-auto">
@@ -7,7 +6,7 @@
                 [id]="'question' + questionIndex +'quizAnswer'+ i" class="form-control"
                 [required]="i <= defaultAnswers-1" ngModel #quizAnswer="ngModel">
             <div class="alert alert-danger" *ngIf="quizAnswer.touched && quizAnswer.invalid">
-                <div *ngIf="quizAnswer.errors?.['required']">Quiz Title is required</div>
+                <div *ngIf="quizAnswer.errors?.['required']">The answer is required</div>
                 <div *ngIf="quizAnswer.errors?.['minlength']">Min lenght is
                     {{quizAnswer.errors?.['minlength'].requiredLength}}
                 </div>
@@ -23,7 +22,7 @@
             </span>
         </div>
         <div class="col-auto" *ngIf="i == defaultAnswers-1">
-            <span class="badge bg-secondary" [class.disable]="count == numberOfAnswer-1" (click)="add()">
+            <span id="btnPlus" class="badge bg-secondary" [class.disable]="count == numberOfAnswer-1" (click)="add()">
                 <i class="bi bi-plus-circle-fill"></i>
             </span>
         </div>

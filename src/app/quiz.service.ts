@@ -12,6 +12,7 @@ export class QuizService {
     return [
       {
         id: 1,
+        quizTitle: value.quizTitle,
         question: value.quizQuestion0,
         answers: [
           { answer: value.question0quizAnswer0 },
@@ -23,6 +24,7 @@ export class QuizService {
       },
       {
         id: 2,
+        quizTitle: value.quizTitle,
         question: value.quizQuestion1,
         answers: [
           { answer: value.question1quizAnswer0 },
@@ -34,6 +36,7 @@ export class QuizService {
       },
       {
         id: 3,
+        quizTitle: value.quizTitle,
         question: value.quizQuestion2,
         answers: [
           { answer: value.question2quizAnswer0 },
@@ -45,6 +48,7 @@ export class QuizService {
       },
       {
         id: 4,
+        quizTitle: value.quizTitle,
         question: value.quizQuestion3,
         answers: [
           { answer: value.question3quizAnswer0 },
@@ -56,6 +60,7 @@ export class QuizService {
       },
       {
         id: 4,
+        quizTitle: value.quizTitle,
         question: value.quizQuestion4,
         answers: [
           { answer: value.question4quizAnswer0 },

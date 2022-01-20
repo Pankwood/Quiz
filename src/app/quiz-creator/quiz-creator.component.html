@@ -1,8 +1,7 @@
 <form #form="ngForm">
     <div class="form-group">
         <div class="col-12">
-            <strong style="color:black"><label for="quizTitle" class="col-12 col-form-label">Digite o nome do
-                    quiz</label></strong>
+            <strong style="color:black"><label for="quizTitle" class="col-12 col-form-label">Quiz Name</label></strong>
             <input name="quizTitle" id="quizTitle" class="form-control" required maxlength="60" ngModel
                 #quizTitle="ngModel">
             <div class="alert alert-danger" *ngIf="quizTitle.touched && quizTitle.invalid">
