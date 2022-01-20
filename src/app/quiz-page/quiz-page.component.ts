@@ -23,7 +23,7 @@ export class QuizPageComponent implements OnInit {
 
     let str = route.snapshot.queryParamMap.get('build') ?? "";
 
-    this.quiz = quizService.getQuiz(JSON.parse(str));
+    this.quiz = quizService.getQuiz(JSON.parse(str)).filter(item => (item.question));;
   }
 
   ngOnInit(): void {
