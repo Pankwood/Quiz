@@ -16,10 +16,16 @@
             </div>
         </div>
         <div class="col-auto">
-            <span [ngClass]="{'badge':true, 'bg-secondary':this.isValid[i], 'bg-success':!this.isValid[i]}"
+            <span [ngClass]="{'badge':true, 'bg-secondary':this.isChecked[i], 'bg-success':!this.isChecked[i]}"
                 (click)="check(i)">
                 <i class="bi bi-check-circle-fill"></i>
             </span>
+        </div>
+        <input required [name]="'check' + questionIndex +'quizAnswer'+ i"
+            [id]="'check' + questionIndex +'quizAnswer'+ i" class="form-control" ngModel="{{!this.isChecked[i]}}"
+            #checkAnswer="ngModel" type="hidden" value={{!this.isChecked[i]}}>
+        <div class="alert alert-danger" *ngIf="checkAnswer.touched && checkAnswer.invalid">
+            <div *ngIf="checkAnswer.errors?.['required']">Check the correct answer</div>
         </div>
         <div class="col-auto" *ngIf="i == defaultAnswers-1">
             <span id="btnPlus" class="badge bg-secondary" [class.disable]="count == numberOfAnswer-1" (click)="add()">

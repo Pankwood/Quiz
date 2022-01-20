@@ -17,14 +17,14 @@ export class QuizAnswersComponent implements OnInit {
 
   numbers: number[] = [];
   option: boolean[] = [];
-  isValid: boolean[] = [];
+  isChecked: boolean[] = [];
 
   count = 1;
 
   ngOnInit(): void {
     this.numbers = Array(this.numberOfAnswer).fill(0).map((_x, i) => i);
     this.option = Array(this.numberOfAnswer).fill(null).map((_x, i) => i <= this.defaultAnswers - 1);
-    this.isValid = Array(this.numberOfAnswer).fill(1);
+    this.isChecked = Array(this.numberOfAnswer).fill(1);
   }
 
   add() {
@@ -38,13 +38,13 @@ export class QuizAnswersComponent implements OnInit {
     this.option[index] = false;
     this.count = this.count - 1;
 
-    if (this.isValid[index] == false)
-      this.isValid[index] = true;
+    if (this.isChecked[index] == false)
+      this.isChecked[index] = true;
   }
 
   check(index: number) {
-    this.isValid.fill(true);
-    this.isValid[index] = false;
+    this.isChecked.fill(true);
+    this.isChecked[index] = false;
   }
 
 }
