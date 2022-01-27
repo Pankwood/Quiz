@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ControlContainer, NgForm } from '@angular/forms';
+import { ControlContainer, NgModelGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-quiz-answers',
   templateUrl: './quiz-answers.component.html',
   styleUrls: ['./quiz-answers.component.css'],
-  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
+  viewProviders: [{ provide: ControlContainer, useExisting: NgModelGroup }]
 })
 
 export class QuizAnswersComponent implements OnInit {

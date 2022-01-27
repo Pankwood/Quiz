@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form ngForm #form="ngForm" (ngSubmit)="submit(form)">
     <div class="form-group">
         <div class="col-12">
             <strong style="color:black"><label for="quizTitle" class="col-12 col-form-label">Quiz Name</label></strong>
@@ -17,7 +17,7 @@
         <button type="button" (click)="add()" [disabled]="numberOfQuestion >= numberOfQuestionsAllowed"
             class="btn btn-primary mx-2">Add
             Question</button>
-        <button type="button" (click)="submit(form)" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </div>
     <a [href]="'http://localhost:4200/quiz-page?build=[' + [(form.value | json)] +']' ">link</a>
 </form>
