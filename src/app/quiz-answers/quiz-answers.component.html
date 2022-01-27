@@ -1,5 +1,5 @@
 <label for="quizAnswer0" class="col-12 col-form-label">Add your options and check the correct one</label>
-<div ngModelGroup="{{questionIndex}}" #answerCheckCtrl="ngModelGroup">
+<div ngModelGroup="{{'question'+ questionIndex}}" #answerCheckCtrl="ngModelGroup" appCheckValidator>
     <div *ngFor="let i of numbers;" class="mt-1">
         <div *ngIf="option[i]">
             <div ngModelGroup="{{i}}" class="row g-1 align-items-center">
@@ -24,9 +24,6 @@
                 </div>
                 <input [name]="'check'" [id]="'check'" class="form-control" ngModel="{{!this.isChecked[i]}}"
                     #checkAnswer="ngModel" type="hidden" value={{!this.isChecked[i]}}>
-                <div class="alert alert-danger" *ngIf="checkAnswer.touched && checkAnswer.invalid">
-                    <div *ngIf="checkAnswer.errors?.['required']">Check the correct answer</div>
-                </div>
                 <div class="col-auto" *ngIf="i == defaultAnswers-1">
                     <span id="btnPlus" class="badge bg-secondary" [class.disable]="count == numberOfAnswer-1"
                         (click)="add()">
@@ -40,5 +37,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="answerCheckCtrl.touched && answerCheckCtrl.errors?.['checkInvalid']">
+        <div>Select at least one answer as correct</div>
     </div>
 </div>

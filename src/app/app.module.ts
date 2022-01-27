@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { QuizCreatorComponent } from './quiz-creator/quiz-creator.component';
 import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 import { QuizQuestionsComponent } from './quiz-questions/quiz-questions.component';
+import { CheckValidatorDirective } from './check-validator.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { QuizQuestionsComponent } from './quiz-questions/quiz-questions.componen
     ResultComponent,
     QuizCreatorComponent,
     QuizAnswersComponent,
-    QuizQuestionsComponent
+    QuizQuestionsComponent,
+    CheckValidatorDirective
   ],
   imports: [
     BrowserModule,
