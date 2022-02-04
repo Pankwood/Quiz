@@ -1,17 +1,17 @@
 <form #f="ngForm">
     <div id="quiz" class="form-group">
-        <div class="question" *ngFor="let quizQuestions of quiz;let i = index">
+        <p>{{quiz.quizTitle}}</p>
+        <div class="question" *ngFor="let quizQuestions of quiz.questions;let i = index">
             <div [hidden]="i != pageNumber">
-                <p>{{quizQuestions.quizTitle}}</p>
-                <p>{{quizQuestions.question}}</p>
+                <p>{{quizQuestions.quizQuestion}}</p>
                 <div class="answers" ngModelGroup="{{'Question'+i}}">
                     <div *ngFor="let answers of quizQuestions.answers">
-                        <div *ngIf="answers.answer">
+                        <div *ngIf="answers.quizAnswer">
                             <input required type="radio" name="{{quizQuestions.id}}" ngModel
-                                id="{{answers.answer+quizQuestions.id}}" value="{{answers.answer}}"
+                                id="{{answers.quizAnswer+quizQuestions.id}}" value="{{answers.quizAnswer}}"
                                 class="form-control">
-                            <label for="{{answers.answer+quizQuestions.id}}">
-                                {{answers.answer}}
+                            <label for="{{answers.quizAnswer+quizQuestions.id}}">
+                                {{answers.quizAnswer}}
                             </label>
                         </div>
                     </div>
@@ -23,13 +23,13 @@
         </div>
     </div>
 
-    <!-- <p>{{f.value | json}}</p> -->
+    <p>{{f.value | json}}</p>
     <div class="btn-toolbar">
         <button id="previous" *ngIf="pageNumber != 0" (click)="previous()" class="btn btn-primary mx-2">Previous
             Question</button>
-        <button id="next" *ngIf="pageNumber < quiz.length-1" (click)="next(f)" class="btn btn-primary">Next
+        <button id="next" *ngIf="pageNumber < quiz.questions.length-1" (click)="next(f)" class="btn btn-primary">Next
             Question</button>
         <button type="button" routerLink="/result" (click)="submit(f)" [disabled]="f.invalid"
-            *ngIf="pageNumber == quiz.length-1" class="btn btn-success">Get your reward</button>
+            *ngIf="pageNumber == quiz.questions.length-1" class="btn btn-success">Get your reward</button>
     </div>
 </form>

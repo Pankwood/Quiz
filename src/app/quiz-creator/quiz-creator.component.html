@@ -19,5 +19,6 @@
             Question</button>
         <button type="submit" class="btn btn-success">Submit</button>
     </div>
+    <p>{{form.value | json}}</p>
     <a [href]="'http://localhost:4200/quiz-page?build=[' + [(form.value | json)] +']' ">link</a>
 </form>

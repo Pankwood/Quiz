@@ -21,7 +21,7 @@ export class QuizPageComponent {
 
     let str = route.snapshot.queryParamMap.get('build') ?? "";
 
-    this.quiz = quizService.getQuiz(JSON.parse(str)).filter(item => (item.question));;
+    this.quiz = quizService.getQuiz(JSON.parse(str));
   }
 
   previous() {
@@ -32,7 +32,7 @@ export class QuizPageComponent {
   next(form: any) {
     this.isValid = form.controls[constants.GROUP_FORM + this.pageNumber].valid;
 
-    if ((this.pageNumber <= this.quiz.length) && (this.isValid))
+    if ((this.pageNumber <= this.quiz.questions.length) && (this.isValid))
       this.pageNumber++;
   }
 
