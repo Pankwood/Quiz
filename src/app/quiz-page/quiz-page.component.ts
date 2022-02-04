@@ -38,7 +38,7 @@ export class QuizPageComponent {
 
   submit(f: any) {
     Object.values(f.controls).forEach((control, i) => {
-      this.countCorrectAnswers += ((control as FormControl).value[i + 1] == this.quiz[i].correctAnswer) ? +1 : 0;
+      this.countCorrectAnswers += ((control as FormControl).value[i + 1] == this.quiz.questions[i].correctAnswer) ? +1 : 0;
     });
 
     localStorage.setItem(constants.CORRECT_ANSWER, this.countCorrectAnswers.toString());

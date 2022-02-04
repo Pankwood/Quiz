@@ -6,6 +6,7 @@ export interface IQuiz {
 export interface IQuestion {
     id: number;
     question: string;
+    correctAnswer: string;
     answers: Array<IAnswer>;
 }
 
