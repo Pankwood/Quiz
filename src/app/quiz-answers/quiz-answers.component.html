@@ -1,5 +1,6 @@
 <label for="quizAnswer0" class="col-12 col-form-label">Add your options and check the correct one</label>
-<div ngModelGroup="{{'question'+ questionIndex}}" #answerCheckCtrl="ngModelGroup" appCheckValidator>
+<div ngModelGroup="{{'question'+ questionIndex}}" #answerCheckCtrl="ngModelGroup" appCheckValidator
+    appDuplicateValidator>
     <div *ngFor="let i of numbers;" class="mt-1">
         <div *ngIf="option[i]">
             <div ngModelGroup="{{i}}" class="row g-1 align-items-center">
@@ -40,5 +41,8 @@
     </div>
     <div class="alert alert-danger" *ngIf="answerCheckCtrl.touched && answerCheckCtrl.errors?.['checkInvalid']">
         <div>Select at least one answer as correct</div>
+    </div>
+    <div class="alert alert-danger" *ngIf="answerCheckCtrl.touched && answerCheckCtrl.errors?.['checkDuplicateInput']">
+        <div>Duplicate values are not allowed</div>
     </div>
 </div>
