@@ -11,20 +11,20 @@ export class QuizService {
   getQuiz(value: any) {
     value = value[0];
 
-
     let answers: Array<IAnswer> = [];
     let questions: Array<IQuestion> = [];
-    let questionNumber: Number = Object.keys(value.Questions).filter(function (e) {
-      if (parseInt(e) >= 0) {
-        return e;
-      }
-      else
-        return null;
-    }).length;
+    let questionNumber: Number = Object.keys(value.Questions)
+      .filter(function (e) {
+        if (parseInt(e) >= 0) {
+          return e;
+        }
+        else
+          return null;
+      }).length;
 
     for (let i = 0; i < questionNumber; i++) {
-
       answers = [];
+
       if (i === 0) {
         for (let j = 0; j < Object.keys(value.Questions.question0).length; j++) {
           let answer: IAnswer = { answer: value.Questions?.question0[j].answer, quizCorrectAnswer: false }
@@ -71,7 +71,13 @@ export class QuizService {
         }
       }
 
-      let question: IQuestion = { id: i + 1, question: value.Questions[i]?.quizQuestion, correctAnswer: value.Questions[i]?.correctAnswer, answers: answers };
+      let question: IQuestion = {
+        id: i + 1,
+        question: value.Questions[i]?.quizQuestion,
+        correctAnswer: value.Questions[i]?.correctAnswer,
+        answers: answers
+      };
+
       questions.push(question);
     }
 
@@ -79,8 +85,6 @@ export class QuizService {
       title: value.quizTitle,
       questions: questions
     }
-
-
 
     return quiz;
   }
