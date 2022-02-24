@@ -1,0 +1,25 @@
+
+.badge:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.btn-toolbar {
+    margin-top: 1rem;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+textarea {
+    resize: none;
+    overflow:hidden;
+}
+
+#quizResult {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: block;
+}
