@@ -22,7 +22,7 @@
     <!--<p>{{form.value | json}}</p>-->
     <div id="quizResult" *ngIf="quizResult">
         <textarea id="URLResult" #txtConfigFile class="form-control" name="URLResult" rows="4" cols="50" readonly
-            wrap="off" title="Copy and send it to someone.">
+            wrap="off" title="Copy and send it to someone." onclick="this.select()">
 {{URLBase + 'quiz-page?build=[' + [(form.value | json)] +']' }}</textarea>
         <div class="btn-toolbar">
             <button type="button" class="btn btn-success" (click)="copy()" title="Copy and send it to someone.">
