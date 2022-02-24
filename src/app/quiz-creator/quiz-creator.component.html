@@ -17,7 +17,7 @@
         <button type="button" (click)="add()" [disabled]="numberOfQuestion >= numberOfQuestionsAllowed"
             class="btn btn-primary mx-2">Add
             Question</button>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Create Quiz</button>
     </div>
     <!--<p>{{form.value | json}}</p>-->
     <div id="quizResult" *ngIf="quizResult">
@@ -37,6 +37,10 @@
                 </svg>
                 Copy
             </button>
+        </div>
+        <div class="copy" *ngIf="copyButtonClicked">
+            <p>Now, that you already copied the link, you can send it to anyone to answer your quiz
+                and get rewards.</p>
         </div>
     </div>
 

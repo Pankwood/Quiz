@@ -14,6 +14,7 @@ export class QuizCreatorComponent {
   numberOfQuestionsAllowed: number = constants.NUMBER_OF_QUESTIONS_ALLOWED;
 
   quizResult = false;
+  copyButtonClicked = false;
   URLBase = '';
 
   constructor() {
@@ -40,6 +41,9 @@ export class QuizCreatorComponent {
 
       // Deselect selected textarea
       this.txtConfigFile.nativeElement.setSelectionRange(0, 0);
+
+      // Show Message
+      this.copyButtonClicked = true;
     }
   }
 }
