@@ -23,7 +23,7 @@
     <div id="quizResult" *ngIf="quizResult">
         <textarea id="URLResult" #txtConfigFile class="form-control" name="URLResult" rows="4" cols="50" readonly
             wrap="off" title="Copy and send it to someone.">
-{{'http://localhost:4200/quiz-page?build=[' + [(form.value | json)] +']' }}</textarea>
+{{URLBase + 'quiz-page?build=[' + [(form.value | json)] +']' }}</textarea>
         <div class="btn-toolbar">
             <button type="button" class="btn btn-success" (click)="copy()" title="Copy and send it to someone.">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { constants } from '../constants';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-quiz-creator',
@@ -7,11 +8,17 @@ import { constants } from '../constants';
   styleUrls: ['./quiz-creator.component.css'],
 })
 export class QuizCreatorComponent {
+  @ViewChild('txtConfigFile') txtConfigFile!: ElementRef;
+
   numberOfQuestion: number = constants.NUMBER_OF_INITIAL_QUESTIONS;
   numberOfQuestionsAllowed: number = constants.NUMBER_OF_QUESTIONS_ALLOWED;
-  quizResult = false;
 
-  @ViewChild('txtConfigFile') txtConfigFile!: ElementRef;
+  quizResult = false;
+  URLBase = '';
+
+  constructor() {
+    this.URLBase = environment.URLBase;
+  }
 
   add() {
     this.numberOfQuestion = this.numberOfQuestion + 1;
