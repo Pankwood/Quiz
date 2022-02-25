@@ -25,7 +25,7 @@
             wrap="off" title="Copy and send it to someone." onclick="this.select()">
 {{URLBase + 'quiz-page?build=[' + [(form.value | json)] +']' }}</textarea>
         <div class="btn-toolbar">
-            <button type="button" class="btn btn-success" (click)="copy()" title="Copy and send it to someone.">
+            <button type="button" class="btn btn-primary mx-2" (click)="copy()" title="Copy and send it to someone.">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-clipboard-plus-fill" viewBox="0 0 16 16">
                     <path
@@ -37,6 +37,13 @@
                 </svg>
                 Copy
             </button>
+            <a href="{{URLBase + 'quiz-page?build=[' + [(form.value | json)] +']' }}" target="_blank"
+                class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-arrow-up-right-square-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM5.904 10.803 10 6.707v2.768a.5.5 0 0 0 1 0V5.5a.5.5 0 0 0-.5-.5H6.525a.5.5 0 1 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 .707.707z" />
+                </svg> Open Quiz</a>
+
         </div>
         <div class="copy" *ngIf="copyButtonClicked">
             <p>Now, that you already copied the link, you can send it to anyone to answer your quiz

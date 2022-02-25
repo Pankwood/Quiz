@@ -46,4 +46,7 @@ export class QuizCreatorComponent {
       this.copyButtonClicked = true;
     }
   }
+  openQuiz() {
+    window.open()
+  }
 }
